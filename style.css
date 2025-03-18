@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    color: orange;
+}
+#container {
+    background-color: palegoldenrod;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+}
+.column {
+    background-color: palegoldenrod;
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1px;
+}
+.square {
+    background-color: orange;
+    flex: 1;
+}
