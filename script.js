@@ -4,9 +4,8 @@ let gridLength = 16;
 
 btn.addEventListener("click", () => {
     eraseGrid();
-
-    //gridLength = prompt("how big grid");
-    //drawGrid(16);
+    gridLength = prompt("how big grid ?");
+    drawGrid(gridLength);
 });
 
 function drawGrid(gridLength) {
@@ -30,7 +29,6 @@ function drawGrid(gridLength) {
 
 function eraseGrid() {
     const columns = document.getElementsByClassName('column');
-    console.log(columns.length);
     for (i = columns.length-1; i >= 0; i--) {
         columns[i].remove();
     }
