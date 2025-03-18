@@ -1,21 +1,51 @@
 const container = document.querySelector('#container');
-const gridLength = 24;
+const btn = document.querySelector('button');
+let gridLength = 16;
 
-for (i = gridLength; i > 0; i--) {
-    const column = document.createElement('div');
-    column.classList.add('column');
-    container.append (column);
-    for (j = gridLength; j > 0; j--) {
-        const square = document.createElement('div');
-        square.classList.add('square');
-        column.append(square);
+btn.addEventListener("click", () => {
+    eraseGrid();
+
+    //gridLength = prompt("how big grid");
+    //drawGrid(16);
+});
+
+function drawGrid(gridLength) {
+    for (i = gridLength; i > 0; i--) {
+        const column = document.createElement('div');
+        column.classList.add('column');
+        container.append (column);
+        for (j = gridLength; j > 0; j--) {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            column.append(square);
+        }
+    }
+    const squares = document.getElementsByClassName('square');
+    for (i = 0; i < squares.length; i++) {
+        squares[i].addEventListener("mouseenter", (e) => {
+            e.target.classList.add("hover");
+        });
     }
 }
 
-const squares = document.getElementsByClassName('square');
-console.log(squares.length);
-for (i=0; i < squares.length; i++) {
-    squares[i].addEventListener("mouseenter", (e) => {
+function eraseGrid() {
+    const columns = document.getElementsByClassName('column');
+    console.log(columns.length);
+    for (i = columns.length-1; i >= 0; i--) {
+        columns[i].remove();
+    }
+}
+
+drawGrid(gridLength);
+
+/* 
+//why doesn't this work? leaving here in case i revisit later
+
+squaresArray = Array.from(squares);
+        // transform html collection into array - necessary ?
+for (const square in squaresArray) {
+    this.addEventListener("mouseenter", (e) => {
         e.target.classList.add("hover");
     });
 }
+*/
