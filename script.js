@@ -1,6 +1,5 @@
 const container = document.querySelector('#container');
-
-const gridLength = 16;
+const gridLength = 24;
 
 for (i = gridLength; i > 0; i--) {
     const column = document.createElement('div');
@@ -11,4 +10,12 @@ for (i = gridLength; i > 0; i--) {
         square.classList.add('square');
         column.append(square);
     }
+}
+
+const squares = document.getElementsByClassName('square');
+console.log(squares.length);
+for (i=0; i < squares.length; i++) {
+    squares[i].addEventListener("mouseenter", (e) => {
+        e.target.classList.add("hover");
+    });
 }

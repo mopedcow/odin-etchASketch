@@ -31,3 +31,6 @@ h1 {
     background-color: orange;
     flex: 1;
 }
+.hover {
+    background-color: darkslategray;
+}
