@@ -5,6 +5,11 @@ let gridLength = 16;
 btn.addEventListener("click", () => {
     eraseGrid();
     gridLength = prompt("how big grid ?");
+    while (!Number(gridLength)) {
+        gridLength = prompt("number only");
+    };
+    if (gridLength > 100) { gridLength = 100; };
+    console.log(gridLength);
     drawGrid(gridLength);
 });
 
