@@ -36,14 +36,20 @@ function drawGrid(gridLength) {
     const squares = document.getElementsByClassName('square');
     for (i = 0; i < squares.length; i++) {
         squares[i].addEventListener("mouseenter", (e) => {
-            let checkClass = e.target.classList;
-            console.log(checkClass[1]);
-            if (checkClass[1] === "active") {
-                return;
-            } else {
+            const active = e.target.classList[1];
+            const inc = 0.1;
+            let opacity = Number(e.target.style.opacity);
+            if (active && opacity < 1) {
+                e.target.style.opacity = opacity + inc;
+            } else if (opacity === 0) {
                 e.target.classList.add("active");
+                //e.target.style.backgroundColor = "black";
                 e.target.style.backgroundColor = getRandomRGB();
-            };
+                e.target.style.opacity = inc;
+            } else {
+                return;
+            }
+            
         });
     }
 }

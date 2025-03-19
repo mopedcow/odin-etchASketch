@@ -13,6 +13,7 @@ h1 {
     color: teal;
 }
 #container {
+    border: 2px solid black;
     width: 600px;
     height: 600px;
     display: flex;
@@ -26,6 +27,5 @@ h1 {
     gap: 1px;
 }
 .square {
-    background-color: lightgray;
     flex: 1;
 }
