@@ -1,8 +1,19 @@
 const container = document.querySelector('#container');
-const btn = document.querySelector('button');
+const resetBtn = document.querySelector('#reset');
+const monoBtn = document.querySelector('#mono');
+const colorBtn = document.querySelector('#color');
 let gridLength = 16;
+let squareColor = 'black';
 
-btn.addEventListener("click", () => {
+monoBtn.addEventListener("click", () => {
+    //toggle a class attribute that tells drawGrid which color to paint squares ?
+});
+
+colorBtn.addEventListener("click", () => {
+    //toggle a class attribute that tells drawGrid which color to paint squares ?
+});
+
+resetBtn.addEventListener("click", () => {
     let newGridLength = prompt("how big grid ?");
 
     while (!Number(newGridLength) ||
@@ -39,17 +50,14 @@ function drawGrid(gridLength) {
             const active = e.target.classList[1];
             const inc = 0.1;
             let opacity = Number(e.target.style.opacity);
-            if (active && opacity < 1) {
+            if (active && opacity < 1 && opacity > 0) {
                 e.target.style.opacity = opacity + inc;
             } else if (opacity === 0) {
                 e.target.classList.add("active");
                 //e.target.style.backgroundColor = "black";
                 e.target.style.backgroundColor = getRandomRGB();
                 e.target.style.opacity = inc;
-            } else {
-                return;
             }
-            
         });
     }
 }
@@ -70,15 +78,3 @@ function getRandomRGB() {
 }
 
 drawGrid(gridLength);
-
-/* 
-//why doesn't this work? leaving here in case i revisit later
-
-squaresArray = Array.from(squares);
-        // transform html collection into array - necessary ?
-for (const square in squaresArray) {
-    this.addEventListener("mouseenter", (e) => {
-        e.target.classList.add("hover");
-    });
-}
-*/

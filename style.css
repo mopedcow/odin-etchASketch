@@ -20,6 +20,15 @@ h1 {
     flex-wrap: wrap;
     gap: 1px;
 }
+.buttons {
+    display: inline-block;
+    display: flex;
+    gap: 8px;
+}
+
+#mono, #color {
+    display: none;
+}
 .column {
     flex: 1;
     display: flex;
