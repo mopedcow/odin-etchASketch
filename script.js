@@ -36,8 +36,14 @@ function drawGrid(gridLength) {
     const squares = document.getElementsByClassName('square');
     for (i = 0; i < squares.length; i++) {
         squares[i].addEventListener("mouseenter", (e) => {
-            //e.target.classList.add("hover");
-            e.target.style.backgroundColor = getRandomRGB();
+            let checkClass = e.target.classList;
+            console.log(checkClass[1]);
+            if (checkClass[1] === "active") {
+                return;
+            } else {
+                e.target.classList.add("active");
+                e.target.style.backgroundColor = getRandomRGB();
+            };
         });
     }
 }
