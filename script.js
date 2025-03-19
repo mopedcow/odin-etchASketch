@@ -4,11 +4,19 @@ let gridLength = 16;
 
 btn.addEventListener("click", () => {
     let newGridLength = prompt("how big grid ?");
-    if (newGridLength === null) {
-        return;
-    }
-    while (!Number(newGridLength)) {
-        newGridLength = prompt("number only");
+
+    while (!Number(newGridLength) ||
+        newGridLength > 100 ||
+        newGridLength < 4) {
+        if (newGridLength === null) {
+            return;
+        } else if (!Number(newGridLength)) {
+            newGridLength = prompt("number only");
+        } else if (newGridLength > 100) {
+            newGridLength = prompt("i can only count to 100");
+        } else {
+            newGridLength = prompt("i like bigger numbers");
+        }
     };
     eraseGrid();
     drawGrid(newGridLength);
@@ -52,4 +60,15 @@ for (const square in squaresArray) {
         e.target.classList.add("hover");
     });
 }
+
+
+
+
+
+    if (newGridLength === null) {
+        return;
+    }
+    while (!Number(newGridLength)) {
+        newGridLength = prompt("number only");
+    };
 */
