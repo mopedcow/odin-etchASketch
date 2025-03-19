@@ -3,14 +3,15 @@ const btn = document.querySelector('button');
 let gridLength = 16;
 
 btn.addEventListener("click", () => {
-    eraseGrid();
-    gridLength = prompt("how big grid ?");
-    while (!Number(gridLength)) {
-        gridLength = prompt("number only");
+    let newGridLength = prompt("how big grid ?");
+    if (newGridLength === null) {
+        return;
+    }
+    while (!Number(newGridLength)) {
+        newGridLength = prompt("number only");
     };
-    if (gridLength > 100) { gridLength = 100; };
-    console.log(gridLength);
-    drawGrid(gridLength);
+    eraseGrid();
+    drawGrid(newGridLength);
 });
 
 function drawGrid(gridLength) {
