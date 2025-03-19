@@ -10,10 +10,9 @@ body {
     align-items: center;
 }
 h1 {
-    color: orange;
+    color: teal;
 }
 #container {
-    background-color: palegreen;
     width: 600px;
     height: 600px;
     display: flex;
@@ -21,14 +20,13 @@ h1 {
     gap: 1px;
 }
 .column {
-    background-color: palegoldenrod;
     flex: 1;
     display: flex;
     flex-flow: column nowrap;
     gap: 1px;
 }
 .square {
-    background-color: orange;
+    background-color: lightgray;
     flex: 1;
 }
 .hover {

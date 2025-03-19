@@ -36,7 +36,8 @@ function drawGrid(gridLength) {
     const squares = document.getElementsByClassName('square');
     for (i = 0; i < squares.length; i++) {
         squares[i].addEventListener("mouseenter", (e) => {
-            e.target.classList.add("hover");
+            //e.target.classList.add("hover");
+            e.target.style.backgroundColor = getRandomRGB();
         });
     }
 }
@@ -46,6 +47,14 @@ function eraseGrid() {
     for (i = columns.length-1; i >= 0; i--) {
         columns[i].remove();
     }
+}
+
+function getRandomRGB() {
+    const randomR = (Math.floor(Math.random() * 255 + 1));
+    const randomG = (Math.floor(Math.random() * 255 + 1));
+    const randomB = (Math.floor(Math.random() * 255 + 1));
+    const randomRGB = `rgb(${randomR}, ${randomG}, ${randomB})`;
+    return randomRGB;
 }
 
 drawGrid(gridLength);
@@ -60,15 +69,4 @@ for (const square in squaresArray) {
         e.target.classList.add("hover");
     });
 }
-
-
-
-
-
-    if (newGridLength === null) {
-        return;
-    }
-    while (!Number(newGridLength)) {
-        newGridLength = prompt("number only");
-    };
 */
